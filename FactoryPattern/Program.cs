@@ -1,10 +1,16 @@
-﻿namespace FactoryPattern
+﻿using System.Linq.Expressions;
+
+namespace FactoryPattern
 {
-    public class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("How many tires??");
+            string input = Console.ReadLine();
+
+            IVehicle vehicle = VehicleFactory.GetVehicle(input);
+            vehicle.Drive();
         }
     }
 }
